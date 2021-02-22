@@ -1,9 +1,12 @@
 import './app.css';
 
-function App() {
+function App({covid}) {
+
+  // covid.covidData();
+
   return (
     <div className="App">
-      Hello Jae hyeok
+      코로나
     </div>
   );
 }
