@@ -1,12 +1,15 @@
-import './app.css';
+import styles from './app.module.css';
+import CovidForm from './components/covidForm/covidForm';
 
 function App({covid}) {
 
-  // covid.covidData();
 
+  
   return (
     <div className="App">
-      코로나
+      <ul>
+        {covid.map(item => <CovidForm key={item.seq} item={item} />)}
+      </ul>
     </div>
   );
 }
