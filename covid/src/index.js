@@ -5,7 +5,7 @@ import App from './app.jsx';
 import Covid from './service/covidData.json';
 
 // const covid = new Covid(process.env.REACT_APP_COVID_API_KEY);
-const covid = Covid.body.items;
+const covid = Covid.body.items.reverse();
 
 ReactDOM.render(
   <React.StrictMode>
