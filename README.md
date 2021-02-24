@@ -4,7 +4,7 @@
 <hr />
 
 ## 사용 언어
- - HTML, CSS, PostCSS, JavaScript, React
+ - HTML, CSS, PostCSS, JavaScript, React, Three.js
 
 
 <hr />
@@ -23,3 +23,23 @@ Access-Control-Allow-Origin : * 혹은 Access-Control-Allow-Origin: 허용하고
     from origin 'http://localhost:3000' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.
 
 공공데이터 포털 링크: <https://www.data.go.kr/index.do>     
+
+
+<hr />
+
+
+### Three.js
+Vanila JavaScript에서 three.js를 사용할 경우 스크립트만 가져와 사용하면 되지만       
+React에서 사용할 경우 npm을 통하여 설치하여야 합니다.       
+
+    npm install three
+
+
+사용하려는 파일에서 import 해와야 합니다.       
+
+
+app.jsx 
+
+    import * as THREE from "three";
+
+
