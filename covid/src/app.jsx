@@ -1,10 +1,11 @@
 import styles from './app.module.css';
-import CovidForm from './components/covidForm/covidForm';
 import * as THREE from 'three';
 import { useEffect, useRef } from 'react';
+import Header from './components/header/header';
+import Covid from './components/covid/covid';
 
 function App({covid}) {
-  
+  /*
     const threeRef = useRef();
 
     const three = () => {
@@ -12,9 +13,9 @@ function App({covid}) {
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
       const renderer = new THREE.WebGLRenderer({ alpha: true });
-
-      threeRef.current.appendChild(renderer.domElement);
       renderer.setSize( window.innerWidth, window.innerHeight );
+      // threeRef.current.appendChild(renderer.domElement);
+      
       window.addEventListener("resize", function(){
         const width = window.innerWidth;
         const height = window.innerHeight;
@@ -47,15 +48,17 @@ function App({covid}) {
     useEffect(()=>{
       three()
     },[threeRef])
+  */
 
   return (
-    <div className="App">
+    <div className={styles.app}>
 
-      <div className={styles.three} ref={threeRef}></div>
+      {/* <div className={styles.three} ref={threeRef}></div> */}
 
-      <ul>
-        { covid.map(item => <CovidForm key={item.seq} item={item} />) }
-      </ul>
+
+      <Header />
+      <Covid covid={covid}/>
+
     </div>
   );
   
