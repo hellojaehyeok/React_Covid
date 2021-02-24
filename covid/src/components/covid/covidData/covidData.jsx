@@ -9,7 +9,6 @@ const CovidData = ({item, dailyDecide}) => {
             <ul>
             <li>날짜 : {item.createDt.split('').splice(0,10).join('')}</li>
             <li>신규 확진자 : {dailyDecide}</li>
-            <li></li>
             </ul>}
         </li>
     );

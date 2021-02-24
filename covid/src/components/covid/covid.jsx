@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ThreeGraph from '../threeGraph/threeGraph';
 import CovidData from './covidData/covidData';
 
 const Covid = ({covid}) => {
@@ -18,6 +19,7 @@ const Covid = ({covid}) => {
 
     return(
         <div>
+            <ThreeGraph dailyDecide={dailyDecide}/>
             <ul>
                 { covid.map((item, index) => <CovidData key={item.seq} item={item} dailyDecide={dailyDecide[index]}/>) }
             </ul>
