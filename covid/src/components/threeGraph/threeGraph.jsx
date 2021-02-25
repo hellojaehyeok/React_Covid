@@ -9,7 +9,12 @@ const ThreeGraph = ({dailyDecide}) => {
     const threeRef = useRef();
 
     const three = () => {
-      console.log("Three.js Start");
+      if(dailyDecide.length == 0){
+        console.log('dailyDecide 전달받지 못함');
+        return;
+      }else{
+        console.log("Three.js Start");
+      }
       const scene = new THREE.Scene();
       const camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
       const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -25,11 +30,20 @@ const ThreeGraph = ({dailyDecide}) => {
       })
       renderer.setClearColor( 0xffffff, 0);
     
-      const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-      const material = new THREE.MeshStandardMaterial( { color: 0x454545 } );
-      const cube = new THREE.Mesh( geometry, material );
-      scene.add( cube );
-  
+      
+      const graphGroup = new THREE.Object3D();
+
+      for(let i=0;i<21;i++){
+        const positionY = dailyDecide[i] * 0.001;
+        const geometry = new THREE.BoxGeometry( 0.02, positionY, 0.01 );
+        const material = new THREE.MeshStandardMaterial( { color: 0x454545 } );
+        const graphCube = new THREE.Mesh( geometry, material );
+        graphCube.position.x=i*0.1-1;
+        graphGroup.add( graphCube );
+      }
+      scene.add(graphGroup);
+      
+
       const light = new THREE.HemisphereLight( 0xffffff, 0x080820, 1 );
       scene.add( light );
   
@@ -37,9 +51,6 @@ const ThreeGraph = ({dailyDecide}) => {
   
       let animate = () => {
         requestAnimationFrame( animate );
-        cube.rotation.x += 0.005;
-        cube.rotation.y += 0.005;
-        cube.rotation.z += 0.005;
         renderer.render( scene, camera );
       };
       animate();
@@ -47,9 +58,8 @@ const ThreeGraph = ({dailyDecide}) => {
 
     useEffect(()=>{
       three()
-    },[threeRef])
+    },[dailyDecide])
   
-    console.log(dailyDecide);
 
     return(
         <div className={styles.three} ref={threeRef}></div>
