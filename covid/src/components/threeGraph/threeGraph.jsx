@@ -56,10 +56,7 @@ const ThreeGraph = ({dailyDecide}) => {
       animate();
     }
 
-    useEffect(()=>{
-      three()
-    },[dailyDecide])
-  
+    three();
 
     return(
         <div className={styles.three} ref={threeRef}></div>
