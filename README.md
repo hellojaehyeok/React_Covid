@@ -43,3 +43,15 @@ app.jsx
     import * as THREE from "three";
 
 
+
+<hr />
+
+React에서 Three.js를 사용하려 하였습니다.     
+기존의 Vanila JavaScript에서 사용하던 방법으로 큐브와 라이트, 카메라 등을      
+만들었지만 이는 React에서 비효율적인 방법으로 판단되었습니다.      
+react-three-fiber를 사용하면 더 효율적으로 3D 그래픽을      
+구현할 수 있어 다른 repository를 만들어 따로 공부해야겠다고 느꼈습니다.     
+
+추후 업데이트할 예정입니다.     
+송재혁입니다.     
+감사합니다.     
